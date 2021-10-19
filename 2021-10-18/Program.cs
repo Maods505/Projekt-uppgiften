@@ -6,6 +6,8 @@ namespace _2021_10_18
     {
         static void Main(string[] args)
         {
+            int min = 1;
+            int max = 11;
             string senasteVinnaren = "Ingen har vunnit än";
             string menyVal = "0";
             while (menyVal != "4")
@@ -26,7 +28,7 @@ namespace _2021_10_18
                         int nummer;
 
                         Random randomerare = new Random();
-                        int slump_tal = randomerare.Next(1, 11);
+                        int slump_tal = randomerare.Next(min, max);
 
                         Console.WriteLine("Gissa på ett tal mellan 1 till 10 och ange det i siffror!");
                         str = Console.ReadLine();
@@ -43,8 +45,8 @@ namespace _2021_10_18
                             }
                             else if (nummer > slump_tal)
                             {
-                                Console.WriteLine("Du gissade för högt");
-                                Console.WriteLine("Gissa igen'1");
+                                Console.WriteLine("Du gissade för högt!");
+                                Console.WriteLine("Gissa igen");
                                 str = Console.ReadLine();
                                 nummer = int.Parse(str);
                             }
